@@ -3,9 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DOM</title>
 </head>
+<style>
+    body{
+        background-color: #4B70F5;
+    }
+    .heading{
+        text-align: center;
+    }
+    .input-box{
+        width: 83%;
+        display: block;
+        margin: 10px auto;
+        height: 85px;
+        border: 2px solid black;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+    }
+    .text-items{
+        display: block;
+        width: 90%;
+        margin: 10px auto;
+        height: 100px;
+    }
+    .action-button{
+        background-color: #3FA2F6;
+        border: 2px solid black;
+        width: 200px;
+        height: 100px;
+        padding: 10px 10px;
+
+    }
+    .input-box:hover{
+        transition: 1s;
+        transform: scale(1.1);
+
+    }
+    .action-button:hover{
+        transition: 1s;
+        transform: scale(1.1);
+
+    }
+</style>
 <body>
-    
+    <h1 class="heading">Text Tool Operation!!!</h1>
+    <input type="text" class="input-box" id="input-text" />
+    <p id="result-text" class="text-items">
+    </p>
+
+    <div class="btn">
+        <button class="action-button" onclick="makeupperCase()" >UPPERCASE</button>
+        <button class="action-button" onclick="makelowerCase()">LOWERCASE</button>
+        <button class="action-button" onclick="charCount()">CHARACTER COUNT</button>
+        <button class="action-button" onclick="wordCount()">WORD COUNT</button>
+
+
+
+    </div>
+    <script>
+        function makeupperCase(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = inputElement.value.toUpperCase()
+            resultElement.style.color="Red"
+        }
+
+        function makelowerCase(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = inputElement.value.toLowerCase()
+            resultElement.style.color="Red"
+        }
+
+        function charCount(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = `Total Character: ${inputElement.value.length}`
+            resultElement.style.color="Red"
+
+        }
+        function wordCount(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text") 
+
+            resultElement.innerText = `Total Words: ${inputElement.value.split(' ').length}`
+            resultElement.style.color="Red"
+
+
+        }
+    </script>
+
 </body>
 </html>
